@@ -1,0 +1,23 @@
+{
+  "name": "classicallyindian",
+  "version": "0.0.0",
+  "description": "A website for indian classical arts.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miravalle/classicallyindian.git"
+  },
+  "author": "Nachi G <nachiketa.gargi@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/miravalle/classicallyindian/issues"
+  },
+  "dependencies": {
+    "express": "~4.13.2",
+    "minifier": "~0.7.0"
+  }
+}
