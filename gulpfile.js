@@ -7,7 +7,7 @@ var exec = require('child_process').exec;
 
 var paths = {
     scripts: 'src/js/*.js',
-    routes: ['routes', 'server.js']
+    routes: ['routes/*.js', 'server.js']
 };
 
 gulp.task('clean', function(cb) {
@@ -20,7 +20,7 @@ gulp.task('scripts', ['clean'], function() {
     return gulp.src(paths.scripts)
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(concat('all.min.js'))
+        .pipe(concat('js.min.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('build/js'));
 });
