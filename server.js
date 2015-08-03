@@ -1,14 +1,5 @@
 var express = require('express');
-var minifier = require('minifier');
 var app = express();
-
-var input = './src/js';
-
-minifier.on('error', function(err) {
-    console.warn(err);
-});
-
-minifier.minify(input, {});
 
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
