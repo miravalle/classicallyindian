@@ -4,30 +4,46 @@ var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 var exec = require('child_process').exec;
+var minifyCss = require('gulp-minify-css');
+var livereload = require('gulp-livereload');
 
 var paths = {
     scripts: 'src/js/*.js',
+    css: './src/css/*.css',
     routes: ['routes/*.js', 'server.js']
 };
 
-gulp.task('clean', function(cb) {
-    del(['build'], cb);
-});
 
-gulp.task('scripts', ['clean'], function() {
-    // Minify and copy all JavaScript (except vendor scripts) 
-    // with sourcemaps all the way down 
+gulp.task('scripts', function() {
     return gulp.src(paths.scripts)
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(concat('js.min.js'))
+        .pipe(concat('min.js'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('build/js'));
+        .pipe(gulp.dest('build/js'))
+        .pipe(livereload());
 });
 
+gulp.task('html', function(){
+    return gulp.src('html/*html')
+    .pipe(livereload());
+})
 gulp.task('watch', function() {
+    livereload.listen();
     gulp.watch(paths.scripts, ['scripts']);
-    gulp.watch(paths.routes, ['server']);
+    gulp.watch(paths.css, ['css']);
+    gulp.watch('*', ['server']);
+    gulp.watch('html/*.html', ['html'])
+});
+
+gulp.task('css', function() {
+    return gulp.src(paths.css)
+    .pipe(sourcemaps.init())
+    .pipe(minifyCss())
+    .pipe(concat('min.css'))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('build/css'))
+    .pipe(livereload());;
 });
 
 gulp.task('server', function(cb) {
