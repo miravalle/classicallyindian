@@ -10,14 +10,16 @@ nav {
     -moz-box-shadow: 0px 0px 50px #999;
     z-index: 99999;
 }
-
+body {
+	font-family: 'Open Sans'
+}
 .navbar {
     list-style: none;
     display: inline;
 }
 
 .navbar-wrapper {
-    max-width: 70em;
+    max-width: 85em;
     margin-left: auto;
     margin-right: auto;
 }
@@ -111,4 +113,36 @@ nav {
     display: block;
     opacity: 1;
     visibility: visible;
+}
+
+.container {
+	max-width: 80em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+}
+
+.featured {
+	float: left;
+	width: 60%;
+}
+
+.article-list li {
+	width: 80%;
+	height: 60px;
+}
+.article-list {
+	list-style: none;
+	padding: 10px;
+}
+
+.article-desc {
+	font-size: 13px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.article-title {
+	font-weight: bold;
 }
