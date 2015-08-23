@@ -28,7 +28,8 @@ nav {
     font-family: 'Open Sans';
     cursor: pointer;
     margin: 0;
-    padding-top: 14px;
+    right: 0;
+    padding-top: 15px;
     padding-bottom: 17px;
     padding-right: 10px;
     padding-left: 10px;
@@ -37,6 +38,46 @@ nav {
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
+}
+
+input.nav-search {
+    background: transparent;
+    border: none;
+    height: 30px;
+    border-bottom: 1px solid black;
+    font-size: 100%;
+    font-family: 'Open Sans';
+}
+
+li.nav-search {
+    padding-top: 0;
+}
+
+li.nav-search::after {
+    content: "search";
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+    margin-left: -28px;
+    position: relative;
+    top: 6px;
 }
 
 .dropdown::after {
@@ -68,7 +109,7 @@ nav {
     cursor: pointer;
 }
 
-.nav-element:hover {
+.nav-element:hover:not(.nav-search) {
     background-color: #555;
     color: #FFF;
 }

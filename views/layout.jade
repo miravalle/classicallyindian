@@ -1,6 +1,23 @@
 doctype html
 html
 	head
+		title Classically Indian
+		link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet', type='text/css')
+		link(href='css/min.css', rel='stylesheet', type='text/css')
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
 	body
+		nav
+			.navbar-wrapper
+				ul.navbar
+					li.nav-logo Classically Indian
+					li.nav-element.dropdown Raagas
+						ul
+							li Raag 1
+							li Raag 2
+					li.nav-element Blah
+					li.nav-element Blee
+					li.nav-element Bluh
+					li.nav-element.nav-search
+						input.nav-search(type='text', placeholder="Search")
 		block content
 		script(src='/js/js.min.js')

@@ -24,8 +24,8 @@ gulp.task('scripts', function() {
         .pipe(livereload());
 });
 
-gulp.task('html', function(){
-    return gulp.src('html/*html')
+gulp.task('views', function(){
+    return gulp.src('views/*.jade')
     .pipe(livereload());
 })
 gulp.task('watch', function() {
@@ -33,7 +33,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.css, ['css']);
     gulp.watch('*', ['server']);
-    gulp.watch('html/*.html', ['html'])
+    gulp.watch('views/*.jade', ['views'])
 });
 
 gulp.task('css', function() {
